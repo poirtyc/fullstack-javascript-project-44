@@ -1,1 +1,2 @@
+#!/opt/homebrew/bin/node
 console.log('node bin/brain-games.js\nWelcome to the Brain Games!');
