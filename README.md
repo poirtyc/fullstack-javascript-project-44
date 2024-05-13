@@ -14,40 +14,40 @@ The project has 5 games:
 - brain-progression
 - brain-prime
 
-###How to install:
-1. Install Node.js: Make sure you have Node.js installed on your computer. 
-You can download it from the official Node.js website and follow the 
+### How to install:
+1. Install Node.js: Make sure you have Node.js installed on your computer.\
+You can download it from the official Node.js website and follow the\
 installation instructions for your operating system.
 
 2. Than open comand line and write `npm install -g '__game_name__'` (Exapmle: `npm install -g brain-even` )
 
 3. Than write name game in comand line (Example `brain-even` or `brain-calc`)
 
-###How to use:
-Write the name of the game in the command line: 
-**brain-even**
-The game will ask if the number is even, you have to answer 'yes' if the number 
+### How to use:
+Write the name of the game in the command line:\
+**brain-even**\
+The game will ask if the number is even, you have to answer 'yes' if the number\
 is even, 'no®  if the number is odd
 ![Brain-even](/asciinema/Brain-even.gif)
 
-**brain-calc**
-The game will ask a question with mathematical expression, you need to calculate 
+**brain-calc**\
+The game will ask a question with mathematical expression, you need to calculate\
 the answer in your mind and write it in the field 'your answer'
 ![Brain-calc](/asciinema/Brain-calc.gif)
 
-**brain-gcd**
-The game will ask a question with two numbers, you need to calculate in your mind 
+**brain-gcd**\
+The game will ask a question with two numbers, you need to calculate in your mind\
 the largest common divisor and write it in the field 'your answer'
 ![Brain-gcd](/asciinema/Brain-gcd.gif)
 
-**brain-progression**
-The game will ask a question with mathematical progression, one of the numbers will be skipped, 
-you need in mind to calculate the answer and write it in the field 'your answer'
+**brain-progression**\
+The game will ask a question with mathematical progression, one of the numbers will be skipped,\
+you need in mind to calculate the answer and write it in the field 'your answer'\
 ![Brain-progression](/asciinema/Brain-progression.gif)
 
 **brain-prime**
-The game asks a question with one number, the player needs to enter the answer 'yes' 
-if the number is prime, or 'no' if the number is not prime. 
-(A prime is a natural number, a larger number that has exactly two different 
+The game asks a question with one number, the player needs to enter the answer 'yes'\
+if the number is prime, or 'no' if the number is not prime.\
+(A prime is a natural number, a larger number that has exactly two different\
 natural divisors: 1 and the number itself.)
 ![Brain-prime](/asciinema/Brain-prime.gif)
