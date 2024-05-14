@@ -2,11 +2,11 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "The Brain Games project offers users a platform for interactive challenges where they respond to questions using keyboard inputs. Victory is attained by answering three consecutive questions correctly, while failure results in an immediate game termination, providing detailed correct answers.",
-  "main": "index.js",
   "author": "Dmitriy Boyko",
   "license": "ISC",
   "type": "module",
   "bin": {
+    "brain-games": "bin/brain-games.js",
     "brain-even": "bin/brain-even.js",
     "brain-calc": "bin/brain-calc.js",
     "brain-gcd": "bin/brain-gcd.js",
