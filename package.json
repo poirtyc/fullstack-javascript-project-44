@@ -13,9 +13,6 @@
     "brain-progression": "bin/brain-progression.js",
     "brain-prime": "bin/brain-prime"
   },
-  "dependencies": {
-    "readline-sync": "github:anseki/readline-sync"
-  },
   "devDependencies": {
     "eslint": "^8.57.0",
     "eslint-config-airbnb": "^19.0.4",
@@ -24,5 +21,8 @@
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.2",
     "globals": "^15.2.0"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.10"
   }
 }
