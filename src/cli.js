@@ -1,5 +1,7 @@
 import readlineSync from 'readline-sync';
-import {getRandomNumber, getRandomSign, getGcd, getProgression} from './utils.js'
+import {
+  getRandomNumber, getRandomSign, getGcd, getProgression,
+} from './utils.js';
 
 // Function for all games, task function get user name and welcome
 const makeWelcome = () => {
@@ -25,7 +27,7 @@ const showQuestion = (typeGame) => {
     console.log('What number is missing in the progression?');
   }
 
-  if(typeGame === 'brain-prime') {
+  if (typeGame === 'brain-prime') {
     console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
   }
 };
@@ -58,16 +60,17 @@ const getAndShowValueQuestion = (typeGame) => {
     return [firstNumber, secondNumber];
   }
 
-  if (typeGame === 'brain-progression'){
+  if (typeGame === 'brain-progression') {
     const progression = getProgression();
-    let randomIndex = getRandomNumber(0, progression.length - 1); // Получаем случайный индекс в диапазоне от 0 до длины массива - 1
-    const hiddenValue = progression[randomIndex]
+    const randomIndex = getRandomNumber(0, progression.length - 1);
+    const hiddenValue = progression[randomIndex];
     progression[randomIndex] = '..';
     console.log(`Question: ${progression.join(' ')}`);
     return hiddenValue;
   }
-};
 
+  return undefined;
+};
 
 /* The function for all games, the task of the function to give the right answer,
 the values get from the index.js, and the index.js from getAndShowValueQuestion() */
@@ -78,7 +81,9 @@ const getTrueAnswer = (typeGame, randomValueOrExpression) => {
   }
 
   if (typeGame === 'brain-calc') {
+    /* eslint-disable no-eval */
     return eval(randomValueOrExpression).toString();
+    /* eslint-enable no-eval */
   }
 
   if (typeGame === 'brain-gcd') {
@@ -87,16 +92,18 @@ const getTrueAnswer = (typeGame, randomValueOrExpression) => {
   }
 
   if (typeGame === 'brain-progression') {
-    let hiddenValue = randomValueOrExpression;
+    const hiddenValue = randomValueOrExpression;
     return hiddenValue.toString();
   }
 
   if (typeGame === 'brain-prime') {
-    let randomNumber = randomValueOrExpression;
-    let arrPrimeNumbers = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29];
-    let result = arrPrimeNumbers.includes(randomNumber);
-    return result === false? 'no': 'yes';
+    const randomNumber = randomValueOrExpression;
+    const arrPrimeNumbers = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29];
+    const result = arrPrimeNumbers.includes(randomNumber);
+    return result === false ? 'no' : 'yes';
   }
+
+  return undefined;
 };
 
 // Function for all games, the task is to give 'Correct'
@@ -114,7 +121,6 @@ const showIncorrect = (wrongValue, trueValue, playerName) => {
 /* Function for all games, task get a name from index.js, and index.js
 gets from getName function and give congratulations to the substituted name */
 const showCongratulation = (name) => `Congratulations, ${name}!`;
-
 
 export {
   makeWelcome, showQuestion, getAnswerFromUser, getTrueAnswer,
