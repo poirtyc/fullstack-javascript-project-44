@@ -102,8 +102,9 @@ const showCorrect = () => {
 
 /* Feature for all games, the task is to get the wrong
 and right answer and string them in the right order */
-const showIncorrect = (wrongValue, trueValue) => {
+const showIncorrect = (wrongValue, trueValue, playerName) => {
   console.log(`'${wrongValue}' is a wrong answer ;(. Correct answer was '${trueValue}'`);
+  console.log(`Let's try again, ${playerName}!`);
 };
 
 /* Function for all games, task get a name from index.js, and index.js

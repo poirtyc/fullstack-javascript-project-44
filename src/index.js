@@ -15,7 +15,7 @@ import {
       if (trueAnswer === answerUser) {
         showCorrect();
       } else { //
-        return showIncorrect(answerUser, trueAnswer);
+        return showIncorrect(answerUser, trueAnswer, playerName);
       }
       correctAnswersCount += 1;
     }
