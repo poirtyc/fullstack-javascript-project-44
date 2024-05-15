@@ -108,7 +108,7 @@ const showIncorrect = (wrongValue, trueValue) => {
 
 /* Function for all games, task get a name from index.js, and index.js
 gets from getName function and give congratulations to the substituted name */
-const showCongratulation = (name) => `Congratulation, ${name}!`;
+const showCongratulation = (name) => `Congratulations, ${name}!`;
 
 
 export {
