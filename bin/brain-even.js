@@ -1,4 +1,4 @@
-#!/opt/homebrew/bin/node
+#!/usr/bin/env node
 import playBrainEven from '../src/index.js';
 
 playBrainEven('brain-even');
