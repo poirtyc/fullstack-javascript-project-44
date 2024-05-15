@@ -12,7 +12,7 @@ const makeWelcome = () => {
 // Task function depending on the received game type from index.js ask the user a question
 const showQuestion = (typeGame) => {
   if (typeGame === 'brain-even' || typeGame === 'brain-prime') {
-    console.log('Answer "yes" if the number is even, otherwise answer "no"');
+    console.log('Answer "yes" if the number is even, otherwise answer "no".');
   }
   if (typeGame === 'brain-calc') {
     console.log('What is the result of the expression?');
