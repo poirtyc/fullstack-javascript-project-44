@@ -1,5 +1,5 @@
 import generalLogic from '../index.js';
-import { getRandomNumber } from '../utils.js';
+import getRandomNumber from '../utils.js';
 
 const rules = 'What number is missing in the progression?';
 
