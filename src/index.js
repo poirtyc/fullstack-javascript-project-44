@@ -1,23 +1,27 @@
-import {
-  makeWelcome, showQuestion, getAnswerFromUser, getTrueAnswer,
-  showCorrect, showIncorrect, getAndShowValueQuestion, showCongratulation,
-} from './cli.js';
+import readlineSync from 'readline-sync';
+import makeWelcome from './cli.js';
 
-export default function playGame(typeGame) {
+const roundsCount = 3;
+
+const generaLogic = (rules, generateRound) => {
   const playerName = makeWelcome();
-  showQuestion(typeGame);
+  console.log(rules);
 
-  let correctAnswersCount = 0;
-  while (correctAnswersCount < 3) {
-    const randomValueOrExpression = getAndShowValueQuestion(typeGame);
-    const trueAnswer = getTrueAnswer(typeGame, randomValueOrExpression);
-    const answerUser = getAnswerFromUser();
-    if (trueAnswer === answerUser) {
-      showCorrect();
-    } else { //
-      return showIncorrect(answerUser, trueAnswer, playerName);
+  for (let i = 1; i <= roundsCount; i += 1) {
+    const [question, answer] = generateRound();
+    console.log(`Question: ${question}`);
+    const userAnswer = readlineSync.question('Your answer: ');
+
+    if (userAnswer === answer) {
+      console.log('Correct!');
+    } else {
+      console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${answer}".`);
+      console.log(`Let's try again, ${playerName}!`);
+      return;
     }
-    correctAnswersCount += 1;
   }
-  return console.log(showCongratulation(playerName));
-}
+
+  console.log(`Congratulations, ${playerName}!`);
+};
+
+export default generaLogic;
