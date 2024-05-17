@@ -21,7 +21,7 @@ const generateRound = () => {
   const hiddenValue = expression[randomIndex];
   expression[randomIndex] = '..';
 
-  const question = `${expression}`;
+  const question = expression.join(' ');
   const answer = String(hiddenValue);
   return [question, answer];
 };
