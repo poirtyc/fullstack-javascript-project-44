@@ -18,7 +18,7 @@ const generalLogic = (rules, generateRound) => {
       return console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${answer}.`);
     }
   }
-  return console.log(`Congratulations, ${playerName}`);
+  return console.log(`Congratulations, ${playerName}!`);
 };
 
 export default generalLogic;
