@@ -1,11 +1,11 @@
-import generalLogic from '../index.js';
 import getRandomNumber from '../utils.js';
+import generalLogic from '../index.js';
 
 const rules = 'Find the greatest common divisor of given numbers.';
 
-const getGcd = (firstNumber, secondNumber) => {
-  let a = firstNumber;
-  let b = secondNumber;
+const getGcd = (num1, num2) => {
+  let a = num1;
+  let b = num2;
   while (b !== 0) {
     const temp = b;
     b = a % b;
@@ -15,11 +15,10 @@ const getGcd = (firstNumber, secondNumber) => {
 };
 
 const generateRound = () => {
-  const firstNumber = getRandomNumber(1, 100);
-  const secondNumber = getRandomNumber(1, 100);
-  const question = `${firstNumber} ${secondNumber}`;
-  const answer = String(getGcd(firstNumber, secondNumber));
-  console.log(answer);
+  const num1 = getRandomNumber(1, 10);
+  const num2 = getRandomNumber(1, 10);
+  const answer = String(getGcd(num1, num2));
+  const question = `${num1} ${num2}`;
   return [question, answer];
 };
 

@@ -1,33 +1,33 @@
-import generalLogic from '../index.js';
 import getRandomNumber from '../utils.js';
+import generalLogic from '../index.js';
 
 const rules = 'What is the result of the expression?';
 
-const getRandomSign = () => {
-  const arrSign = ['+', '-', '*'];
-  const randomIndex = Math.floor(Math.random() * arrSign.length);
-  return arrSign[randomIndex];
+const getOperator = () => {
+  const arrOperator = ['+', '-', '*'];
+  const randomIndex = getRandomNumber(0, arrOperator.length - 1);
+  return arrOperator[randomIndex];
 };
 
-const calc = (firstNumber, secondNumber, sign) => {
-  switch (sign) {
+const getResult = (num1, num2, operator) => {
+  switch (operator) {
     case '+':
-      return firstNumber + secondNumber;
+      return num1 + num2;
     case '-':
-      return firstNumber - secondNumber;
+      return num1 - num2;
     case '*':
-      return firstNumber * secondNumber;
+      return num1 * num2;
     default:
-      throw new Error(`Unknown operation: ${sign}`);
+      throw new Error(`Unknown operation: ${operator}`);
   }
 };
 
 const generateRound = () => {
-  const firstNumber = getRandomNumber(1, 10);
-  const secondNumber = getRandomNumber(1, 10);
-  const sign = getRandomSign();
-  const question = `${firstNumber} ${sign} ${secondNumber}`;
-  const answer = String(calc(firstNumber, secondNumber, sign));
+  const num1 = getRandomNumber(1, 10);
+  const num2 = getRandomNumber(1, 10);
+  const operator = String(getOperator());
+  const question = `${num1} ${operator} ${num2}`;
+  const answer = String(getResult(num1, num2, operator));
   return [question, answer];
 };
 

@@ -1,28 +1,25 @@
-import generalLogic from '../index.js';
 import getRandomNumber from '../utils.js';
+import generalLogic from '../index.js';
 
 const rules = 'What number is missing in the progression?';
 
 const getProgression = () => {
-  const startValue = getRandomNumber(1, 5);
+  const firstNum = getRandomNumber(1, 5);
   const difference = getRandomNumber(1, 4);
   const length = getRandomNumber(5, 10);
-  const arrProgression = [];
-  for (let i = startValue; arrProgression.length <= length; i += difference) {
-    arrProgression.push(i);
+  const progression = [];
+  for (let i = firstNum; progression.length <= length; i += difference) {
+    progression.push(i);
   }
-  return arrProgression;
+  return progression;
 };
 
 const generateRound = () => {
   const expression = getProgression();
-
   const randomIndex = getRandomNumber(0, expression.length - 1);
-  const hiddenValue = expression[randomIndex];
+  const answer = String(expression[randomIndex]);
   expression[randomIndex] = '..';
-
   const question = expression.join(' ');
-  const answer = String(hiddenValue);
   return [question, answer];
 };
 

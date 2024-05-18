@@ -3,7 +3,7 @@ import makeWelcome from './cli.js';
 
 const roundsCount = 3;
 
-const generaLogic = (rules, generateRound) => {
+const generalLogic = (rules, generateRound) => {
   const playerName = makeWelcome();
   console.log(rules);
 
@@ -15,13 +15,10 @@ const generaLogic = (rules, generateRound) => {
     if (userAnswer === answer) {
       console.log('Correct!');
     } else {
-      console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${answer}".`);
-      console.log(`Let's try again, ${playerName}!`);
-      return;
+      return console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${answer}.`);
     }
   }
-
-  console.log(`Congratulations, ${playerName}!`);
+  return console.log(`Congratulations, ${playerName}`);
 };
 
-export default generaLogic;
+export default generalLogic;
