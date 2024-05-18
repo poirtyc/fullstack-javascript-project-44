@@ -15,7 +15,8 @@ const generalLogic = (rules, generateRound) => {
     if (userAnswer === answer) {
       console.log('Correct!');
     } else {
-      return console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${answer}.`);
+      console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${answer}.`);
+      return console.log(`Let's try again, ${playerName}!`);
     }
   }
   return console.log(`Congratulations, ${playerName}!`);
