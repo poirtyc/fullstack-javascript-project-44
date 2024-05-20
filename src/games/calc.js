@@ -9,7 +9,7 @@ const getOperator = () => {
   return arrOperator[randomIndex];
 };
 
-const getResult = (num1, num2, operator) => {
+const getCalculation = (num1, num2, operator) => {
   switch (operator) {
     case '+':
       return num1 + num2;
@@ -25,9 +25,9 @@ const getResult = (num1, num2, operator) => {
 const generateRound = () => {
   const num1 = getRandomNumber(1, 10);
   const num2 = getRandomNumber(1, 10);
-  const operator = String(getOperator());
+  const operator = getOperator();
   const question = `${num1} ${operator} ${num2}`;
-  const answer = String(getResult(num1, num2, operator));
+  const answer = String(getCalculation(num1, num2, operator));
   return [question, answer];
 };
 
