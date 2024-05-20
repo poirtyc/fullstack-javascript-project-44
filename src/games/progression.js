@@ -4,7 +4,6 @@ import generalLogic from '../index.js';
 const rules = 'What number is missing in the progression?';
 
 const getProgression = (firstNum, difference, lengthProgression) => {
-  
   const progression = [];
   for (let i = firstNum; progression.length <= lengthProgression; i += difference) {
     progression.push(i);
